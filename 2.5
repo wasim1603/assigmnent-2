@@ -1,0 +1,45 @@
+C program to remove duplicate elements in an Array?
+
+#include <stdio.h>
+int main() 
+{
+int arr[100], n, i, j, k, duplicate;
+printf("Enter the number of elements: ");
+scanf("%d", &n);
+printf("Enter the elements of the array: ");
+for(i = 0; i < n; i++)
+{
+scanf("%d", &arr[i]);
+}
+for(i = 0; i < n; i++)
+{
+duplicate = 0;
+for(j = i+1; j < n; j++) 
+{
+if(arr[i] == arr[j]) 
+{
+duplicate = 1;
+for(k = j; k < n; k++)
+{
+arr[k] = arr[k+1];
+}
+n--;
+j--;
+}
+}
+if(duplicate)
+{
+for(k = i; k < n; k++)
+{
+arr[k] = arr[k+1];
+}
+n--;
+i--;
+}
+}
+printf("Resultant Array after removing duplicates: ");
+for(i = 0; i < n; i++)
+{
+printf("%d ", arr[i]);
+}
+}
