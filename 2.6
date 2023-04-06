@@ -1,0 +1,34 @@
+C Program to put even & odd elements of an array in 2 separate arrays.
+
+#include <stdio.h>
+void main()
+{
+int arr[50], evenArr[50], oddArr[50];
+int n, i, evenCount = 0, oddCount = 0;
+printf("Enter the number of elements in the array: ");
+scanf("%d", &n);
+printf("Enter the elements of the array: ");
+for (i = 0; i < n; i++)
+{
+scanf("%d", &arr[i]);
+if (arr[i] % 2 == 0)
+{
+evenArr[evenCount] = arr[i];
+evenCount++;
+} 
+else {
+oddArr[oddCount] = arr[i];
+oddCount++;
+}
+}
+printf("\nEven elements: ");
+for (i = 0; i < evenCount; i++)
+{
+printf("%d ", evenArr[i]);
+}
+printf("\nOdd elements: ");
+for (i = 0; i < oddCount; i++)
+{
+printf("%d ", oddArr[i]);
+}
+}
