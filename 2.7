@@ -1,0 +1,28 @@
+Reversing an array
+
+#include <stdio.h>
+int main()
+{
+int arr[50], temp;
+int n, i, j;
+printf("Enter the number of elements in the array: ");
+scanf("%d", &n);
+printf("Enter the elements of the array: ");
+for (i = 0; i < n; i++)
+{
+scanf("%d", &arr[i]);
+}
+j = n - 1; // index of the last element in the array
+for (i = 0; i < n / 2; i++) 
+{
+temp = arr[i];
+arr[i] = arr[j];
+arr[j] = temp;
+j--;
+}
+printf("\nReversed array: ");
+for (i = 0; i < n; i++)
+{
+printf("%d ", arr[i]);
+}
+}
