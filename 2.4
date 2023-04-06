@@ -1,0 +1,27 @@
+C Program To Find Maximum Difference Between Two Elements in an Array
+
+#include <stdio.h>
+#include <limits.h>
+void main() 
+{
+int array[10], n, i, maxDiff = INT_MIN, minVal = INT_MAX;
+printf("Enter the number of elements: ");
+scanf("%d", &n);
+printf("Enter the elements of the array: ");
+for(i = 0; i < n; i++)
+{
+scanf("%d", &array[i]);
+}
+for(i = 0; i < n; i++) 
+{
+if(array[i] < minVal) 
+{
+minVal = array[i];
+}
+if(array[i] - minVal > maxDiff) 
+{
+maxDiff = array[i] - minVal;
+}
+}
+printf("Maximum difference is %d\n", maxDiff);
+}
